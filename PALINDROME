@@ -1,0 +1,30 @@
+import java.util.*;
+public class Main{
+    public static boolean ispalin(String str){
+        int[] charcount=new int[26];
+        int oddcount=0;
+        for(char ch: str.toCharArray()){
+          if(Character.isLetter(ch))
+          {
+            int index=Character.toLowerCase(ch)-'a';
+            charcount[index]++;
+            if(charcount[index]%2==1)
+            oddcount++;
+            else
+            oddcount--;
+          
+          }
+       
+        }
+        return oddcount<=1; 
+        }
+public static void main(String[] args){
+String str = "malay";
+if(ispalin(str)){
+System.out.println("TRUE");
+}
+else{
+    System.out.println("FALSE");
+}
+}
+}
